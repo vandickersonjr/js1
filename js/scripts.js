@@ -1,40 +1,14 @@
-/*
-var myName = "Van Dickerson";
 
-let myBirthdate = new Date('11.17.85');
+let firstName = prompt("What is your first name?");
 
-const myGoal = "My goals for this class are to get a basic understanding of JavaScript and connect with other developers.";
+console.log(firstName)
 
-console.log(myName + myBirthdate + myGoal);
+let lastName = prompt("What is your last name?");
 
-console.log(myName, myBirthdate, myGoal);
+alert(`Hello, ${lastName}!`);
 
-alert(myGoal);
+let birthdate = prompt("What is your birthdate?");
 
-let userAnswer = prompt("Did you finish your homework?", "Yes");
+confirm(birthdate);
 
-console.log(userAnswer);
-*/
-
-/*
-1. Declare 2 let variables:
-  a. Favorite movie
-  b. Favorite food
-2. Declare 2 const variables:
-  a. Year the movie came out
-  b. Ingredients of your favorite foods as an array
-3. Alert your favorite food with its Ingredients
-4. Confirm the movie and year
-*/
-
-var favMovie = "Black Panther";
-
-var favFood = "Sandwiches";
-
-const year = new Date('2/16/2018');
-
-const ingredients = ['sourdough', 'bread', 'meat', 'chesse', 'spinach', 'avacado'];
-
-alert(favFood + " " + ingredients);
-
-confirm(favMovie + " " + year);
+alert(birthdate);
