@@ -1,4 +1,3 @@
-day3
 /*
 var a = "Is this equal", b = new String("Is this equal");
 
@@ -62,4 +61,3 @@ switch (favColor.toLowerCase()) {
   default:
     alert(`Wait ${userName},` + ' ' + 'its time to take a break and eat.')
 }
-gh-pages
