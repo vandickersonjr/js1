@@ -1,78 +1,58 @@
-let fav = ['Black Panther', 3, true, 2003];
+// step 1
+toDo = []; //Declare the array
 
-// console.log(fav.length);
+let toDo1 = [prompt('What is the first task on your todos list?', 'laundry')]; //add first array
 
-// console.log(Array.isArray(fav));
+let toDo2 = [prompt('What is the second task on your todos list?', 'shopping')]; //add second array
 
-console.log(fav);
+let toDo3 = [prompt('What is the third task on your todos list?', 'party')]; //add third array
 
-//Adding element to  end of array
+toDo.push(toDo1, toDo2, toDo3); //add elements to array
 
-fav.push("Bowls");
+// step 2
 
-//Adding element to beginning of array
+for(let i = 0; i < toDo.length; i++) { //add days next to each index
 
-// fav.unshift("Bowls");
+  let timeline = prompt(`How many days will it take to get ${toDo[i][0]} done?`, '2');
 
-console.log(fav);
+  timeline = !isNaN(parseInt(timeline)) ? parseInt(timeline) : 2;
 
-//Access the last member of the array
+  toDo[i].unshift(timeline);
+}
 
-console.log(fav[fav.length - 1]);
+// console.log(toDo, 'after adding time it will take')
 
-//Access the second-to-last member of the array
+toDo.sort();
 
-console.log(fav[fav.length - 2]);
+// console.log(toDo, 'after sort')
 
-//Removes last element
 
-// console.log(fav.pop());
+let longest = toDo[0]
+let j = 0;
+while (j < toDo.length) {
+if(toDo[j][0] > longest[0]) longest = toDo[j]
+  j++
+}
+  longest.push('this');
 
-//Removes first element
 
-// console.log(fav.shift());
+let k = 0;
 
-//Removes and saves first element
-// let first = fav.shift();
+do {
+  if(toDo[k][toDo[k].length - 1] !== "this") {
+    toDo[k].push("done");
+  }
+  k++
+} while(k < toDo.length);
 
-// console.log(fav, first);
+//step 5
 
-//will remove that element and everything after
-// fav.splice(2);
+let doneItems = [];
 
-// fav.splice(2, 1);
+toDo.forEach(toDo => {
+  if(toDo[toDo.length - 1] === 'done') doneItems.push(toDo);
+});
 
-//Remove the second index and replace it with false
+alert(doneItems);
 
-// fav.splice(2, 1, false, "Rocky")
-
-// console.log(fav, "this is the result of splice");
-
-console.log(fav, 'before');
-
-let removeItems = fav.splice(2, 1, false, "Rocky");
-
-console.log(removeItems, 'the item removed');
-
-// Make copy of original
-
-// let copy = fav.slice()
-// console.log(fav)
-// console.log(fav.indexOf("Rocky"))
-// console.log(fav)
-
-// const products = [["blanket", [12.99, 10.99], "The best blanket"], ["rattle", 4.99, "Its a rattle man..."], ["diapers", 10.99, "They catch the doo doo"]];
-// alert(products[0][1][1]);
-
-let favMovie = ["Lion King", "Simba"];
-let secondFav = ["MIB", "K"];
-let thirdFav = ["Black Panther", "T'Challa"];
-
-let favoriteMovies = [];
-
-favoriteMovies.push(favMovie, secondFav, thirdFav);
-
-let titles = [];
-titles.push(favoriteMovies[0][0], favoriteMovies[1][0]);
-
-alert(titles);
+console.log(doneItems);
