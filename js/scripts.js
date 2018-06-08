@@ -51,9 +51,23 @@
 //
 // alert(ageDog(parseInt(prompt("How old is your dog in years?", "3"))));
 
-function userAge(age, dailyUse) {
-  const death = 80;
-  return (death - age) * 365;
-}
+// Try it out #2
 
-alert(userAge(parseInt(prompt("How old are you?", "25")))) 
+function lifetimeCalculator(age, dailyUse, deathAge) {
+  if(!isNaN(age) && !isNaN(dailyUse) && !isNaN(deathAge)) {
+    return (deathAge - age) * (dailyUse * 365);
+  } else {
+    // userAge = prompt('How old are you?', '30');
+    // userUse = prompt('How much do you use every day?');
+    // userDeath = prompt("When you gonna die doe?");
+    // lifetimeCalculator(parseInt(userAge), parseInt(userUse));
+  }
+};
+
+let userAge = prompt('How old are you?', '30');
+let userUse = prompt('How much do you use every day?', '1');
+let userDeath = prompt("When you gonna die doe?");
+
+let usage = parseInt((userDeath - userAge) * (userUse * 365));
+
+alert(`You will need ${usage} to last until your 80.`);
