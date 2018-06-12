@@ -53,21 +53,69 @@
 
 // Try it out #2
 
-function lifetimeCalculator(age, dailyUse, deathAge) {
-  if(!isNaN(age) && !isNaN(dailyUse) && !isNaN(deathAge)) {
-    return (deathAge - age) * (dailyUse * 365);
-  } else {
+// function lifetimeCalculator(age, dailyUse, deathAge) {
+//   if(!isNaN(age) && !isNaN(dailyUse) && !isNaN(deathAge)) {
+//     return (deathAge - age) * (dailyUse * 365);
+//   } else {
     // userAge = prompt('How old are you?', '30');
     // userUse = prompt('How much do you use every day?');
     // userDeath = prompt("When you gonna die doe?");
     // lifetimeCalculator(parseInt(userAge), parseInt(userUse));
-  }
+//   }
+// };
+
+// let userAge = prompt('How old are you?', '30');
+// let userUse = prompt('How much do you use every day?', '1');
+// let userDeath = prompt("When you gonna die doe?");
+//
+// let usage = parseInt((userDeath - userAge) * (userUse * 365));
+//
+// alert(`You will need ${usage} to last until your 80.`);
+
+// Takehome 1 & 2
+
+function powerOfTwo(number) {
+  if(!isNaN(number)) {
+  return number * number;
+} else {
+  let answer = powerOfTwo(parseInt(prompt("Please enter number", "2")));
+  alert(answer);
+}
 };
 
-let userAge = prompt('How old are you?', '30');
-let userUse = prompt('How much do you use every day?', '1');
-let userDeath = prompt("When you gonna die doe?");
+  let answer = powerOfTwo(parseInt(prompt("What do you want to square?", "2")));
+  alert(answer);
 
-let usage = parseInt((userDeath - userAge) * (userUse * 365));
+  // Takehome 3
 
-alert(`You will need ${usage} to last until your 80.`);
+  function parseString(string) {
+    let parsedLetter = string.charAt(0).toUpperCase();
+    let stringArr = string.split('');
+    stringArr.splice(0, 1, parsedLetter);
+    string = stringArr.join(''); //Replaces the first letter with the new uppercase letter
+    if(string.charAt(string.length - 1) !== '.') string = string + '.';
+    return string;
+  }
+
+  let answer2 = parseString(prompt("Type something in.", "i heart dark chocolate"));
+  alert(answer2);
+
+  // Takehome 4
+
+  function reverseHalves(string) {
+    let halfIndex = string.length / 2;
+    let firstHalf = string.substring(0, halfIndex);
+    let secondHalf = string.substring(halfIndex, string.length);
+    console.log(halfIndex);
+    alert(`${secondHalf}${firstHalf}`);
+  }
+  reverseHalves(prompt("Write a sentence", "What happened"));
+
+  // Takehome 5
+
+  function isPalindrome(string) {
+    let reversed = string.split('').reverse().join(''); //split returns an array, reverse and join works only on arrays
+    return string === reversed ? true : false;
+  }
+
+  alert(string);
