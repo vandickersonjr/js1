@@ -53,6 +53,7 @@ let background = document.querySelector('.background');
 let h2 = document.querySelector('h2')
 
 button.addEventListener('click', e => {
+  e.target.textContent = "Goodbye!!"
   alert('Hey, good job!')
 })
 
