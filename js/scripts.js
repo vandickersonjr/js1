@@ -40,5 +40,27 @@ function queryDom(methodName, element) {
   }
 };
 
-myClass.addEventListener('click', e => { // first argument is a valid string
+myClass.addEventListener(
+  'click',// first argument is a valid string
+  e => { // second argument CALLBACK function
+    alert('you clicked on me!!!')
+})
+
+let button = document.querySelector('.button');
+
+let background = document.querySelector('.background');
+
+let h2 = document.querySelector('h2')
+
+button.addEventListener('click', e => {
+  alert('Hey, good job!')
+})
+
+background.addEventListener('mouseenter', e => {
+  e.target.style.backgroundColor = "green";
+  console.log(e);
+})
+
+h2.addEventListener('mouseleave', e => {
+  e.target.style.color = "white"
 })
